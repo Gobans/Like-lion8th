@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyYoutuber</title>
+    <link rel="stylesheet" href="../static/home.css?w">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+<body>
+    <p style="text-align: center; margin-bottom: 50px;"> <i class="fas fa-sun" style="color: red;"></i>MH가 좋아하는 유튜브채널 <i class="fas fa-sun" style="color: red;"></i></p>
+    {% for creater in youtube.all %}
+    <div class="container">
+        <div class="high_bar">
+            <div class="ch_name" style="flex: 2; border-radius: 10% / 50%;"> {{creater.ch_name}}</div>
+            <div class="cr_name"> {{creater.cr_name}}</div>
+            <div class="subscri"> 구독자 수 : {{creater.subscr}} </div>
+            <div class="prefer" style="color: yellow;  border-radius: 100px;">
+                {% if creater.prefer == 1 %}
+                <i class="fas fa-lemon"></i><i class="far fa-lemon"></i><i class="far fa-lemon"></i><i class="far fa-lemon"></i><i class="far fa-lemon"></i>
+                {%endif%}
+                {% if creater.prefer == 2 %}
+                <i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="far fa-lemon"></i><i class="far fa-lemon"></i><i class="far fa-lemon"></i>
+                {%endif%}
+                {% if creater.prefer == 3 %}
+                <i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="far fa-lemon"></i><i class="far fa-lemon"></i>
+                {%endif%}
+                {% if creater.prefer == 4 %}
+                <i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="far fa-lemon"></i>
+                {%endif%}
+                {% if creater.prefer == 5 %}
+                <i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="fas fa-lemon"></i><i class="fas fa-lemon"></i>
+                {%endif%}
+
+            </div>
+            <div class ="live" style="border: none; background-color: transparent;">
+                {% if creater.live == True %}
+                <img src="../static/Live.png" width="100px" height="50px" alt="">
+                {%endif%}
+                {% if creater.live == False %}
+                <img src="../static/Live_off.png"width="100px" height="50px" alt="">
+                {%endif%}
+            </div>
+        </div>
+        <div class="contents">
+            <div class="vid1"><iframe width="100%" height="100%" src="{{creater.vi_link1}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="vid2"><iframe width="100%" height="100%" src="{{creater.vi_link2}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+            <div class="vid3"><iframe width="100%" height="100%" src="{{creater.vi_link3}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

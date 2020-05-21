@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@500&display=swap');
+
+body{
+    margin: 50px;
+    height: 100%;
+    background-color: rgb(178, 209, 223);
+    font-family: 'Sunflower', sans-serif;
+    font-size: 22px;
+}
+
+.container{
+    flex-direction: column;
+    display: flex;
+}
+
+.high_bar{
+    flex-direction: row;
+    display: flex;
+    flex: 1;
+}
+.high_bar > div{
+    height: 50px;
+    flex: 1;
+    text-align: center;
+    border-radius: 25% 10%;
+    margin: 10px;
+    padding-top: 20px;
+    background-color: rgb(105, 165, 224);
+}
+
+.contents{
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    margin-bottom: 100px;
+}
+
+.contents > div{
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
