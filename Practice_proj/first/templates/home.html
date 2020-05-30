@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for list in test.all %}
+    <p>{{list.name}}</p>
+    <p>{{list.value}}</p>
+    <a href="{% url 'detail' list.id %}">자세히보기</a>
+    {% endfor %}
+
+    <a href="{% url 'new'%}">
+        new
+    </a>
+</body>
+</html>

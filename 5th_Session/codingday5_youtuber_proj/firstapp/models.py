@@ -13,3 +13,8 @@ class youtuber(models.Model):
     
     def __str__(self):
         return self.ch_name
+
+class youtube(models.Model):
+    text = models.TextField(max_length=2000)
+    summary = models.TextField(max_length=200)
+    photo = models.ImageField(upload_to="image",blank = True)

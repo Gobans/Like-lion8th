@@ -1,4 +1,4 @@
-"""codingday5_youtuber URL Configuration
+"""favSinger URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,20 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf import settings
-from django.conf.urls.static import static
-import firstapp.views 
-
+import favApp.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', firstapp.views.home, name='home'),
-    path('detail/<int:detail_id>', firstapp.views.detail,name='detail'),
-    path('new/',firstapp.views.new,name='new'),
-    path('create/',firstapp.views.create,name='create'),
-
+    path('',favApp.views.home, name ='home'),
+    path('detail/<int:detail_id>', favApp.views.detail, name = 'detail'),
+    path('add/',favApp.views.add, name= 'add'),
+    path('delete/<int:delete_id>', favApp.views.delete,name="delete"),
+    path('change/<int:change_id>', favApp.views.change,name='change'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                    document_root = settings.MEDIA_ROOT)

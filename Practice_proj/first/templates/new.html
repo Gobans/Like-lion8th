@@ -1,0 +1,11 @@
+<form action="{% url 'create' %}" method="POST"  enctype="multipart/form-data">
+    {% csrf_token%}
+    <p>이름</p>
+    <input type="text" name="name">
+    <p>설명</p>
+    <textarea cols="40" rows="3" name="summary"></textarea>
+    <p>사진</p>
+    {{form.photo}}
+    <!-- <input name="photo" type="file"/> -->
+    <input type="submit" class="button" value="작성하기">
+</form>
