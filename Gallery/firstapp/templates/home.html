@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    <a href="{% url 'create'%}">추가하기</a>
+    {% for i in picture_key.all %}
+        {{i.explain}}
+        {%if i.photo%}
+            <img src="{{i.photo.url}}" style="width: 200px;">
+        {%endif%} 
+        <a href="{% url 'update' i.id %}">업데이트</a>
+        <a href="{% url 'delete' i.id %}">삭제하기</a>
+    {% endfor %}
+</body>
+</html>
