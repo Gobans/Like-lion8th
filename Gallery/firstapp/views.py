@@ -13,7 +13,7 @@ def update(request,update_id):
     form = createForm()
     if request.method == "POST":
         update_obj.explain = request.POST['explain']
-        update_obj.photo = request.POST['photo']
+        update_obj.photo = request.FILES['photo']
         update_obj.save()
         return redirect(reverse('home'))
     else:
@@ -25,7 +25,7 @@ def create(request):
     if request.method == "POST":
         picture_val = picture()
         picture_val.explain = request.POST['explain']
-        picture_val.photo = request.POST['photo']
+        picture_val.photo = request.FILES['photo']
         picture_val.save()
         return redirect(reverse('home'))
     else:

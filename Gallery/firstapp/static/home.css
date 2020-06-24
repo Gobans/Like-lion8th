@@ -1,0 +1,23 @@
+.outline{
+    position: relative;
+}
+
+.manin_title{
+    left: 240px; width: 450px; bottom: 120px; font-size: 3.8em; font-weight: bold; position: absolute; font-family: cursive;
+}
+
+.add{
+    font-size: 0.3em; position: relative; left: 140px;
+}
+
+.top{
+    text-align: center;
+}
+
+.photo_zone{
+    flex-direction: row;
+    width: 30%;
+    margin: 40px;
+    padding: 100px;
+    border: black double 10px;
+}
