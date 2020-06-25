@@ -1,18 +1,23 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static%}
+
+{% block title%}
+    <title>Modify</title>
+    <link rel="stylesheet" href="../static/update.css">
+{% endblock title %}
+
+{% block contents%}
+<div class="photo_zone">
     <form enctype="multipart/form-data" method="POST"   >
         {% csrf_token %}
+        <p>이름 :</p>
+        <input type="text" name ="name" value="{{update_key.name}}">
         <p>설명 : </p>
-        <input type="text" name="explain">
+        <input type="text" name="explain" value="{{update_key.explain}}">
         <p>사진</p>
+        <img src="{{update_key.photo.url}}" style="width: 400px;" title="{{i.explain}}&#10어허">
         {{form.photo}}
         <input type="submit" value="업데이트" name='submit'>
     </form>
-</body>
-</html>
+</div>
+{% endblock contents %}

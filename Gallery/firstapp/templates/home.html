@@ -16,16 +16,19 @@
 
     <div style="display: flex; flex-direction: row; width: 100%; height: 500px; flex-wrap: wrap;">
     {% for i in picture_key.all %}
+
         <div class = 'photo_zone'>
+            <p style="text-align: center;">{{i.name}}</p>
             {%if i.photo%}
-                <img src="{{i.photo.url}}" style="width: 400px;">
+            <div style="text-align: center;">
+                <img src="{{i.photo.url}}" style="width: 400px;" title="{{i.explain}}&#10어허">
+            </div>
             {%endif%} 
-                {{i.explain}}
-                <div style="display: flex; flex-direction: column;"></div>
-                <div style="padding-top: 30px;">
-                    <a href="{% url 'update' i.id %}">업데이트</a>
-                    <a href="{% url 'delete' i.id %}">삭제하기</a>
-                </div>
+            <div style="display: flex; flex-direction: column;"></div>
+            <div style="padding-top: 30px; text-align: center;">
+                <a href="{% url 'update' i.id %}">Modify</a>
+                <a href="{% url 'delete' i.id %}">Delete</a>
+            </div>
 
         </div>
     {% endfor %}
