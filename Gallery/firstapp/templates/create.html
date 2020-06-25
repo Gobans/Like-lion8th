@@ -7,16 +7,21 @@
 {% endblock title %}
 
 {% block contents%}
+<nav>
+    <div class= 'scroll'>
+       <a href="../">Back</a>
+    </div>
+</nav>
     <div class="photo_zone">
         <form action="{% url 'create' %}" enctype="multipart/form-data" method ="POST"   >
             {% csrf_token %}
-            <p>이름 :</p>
-            <input type="text" name ="name">
-            <p>설명 :</p>
-            <input type="text" name = "explain">
-            <p>사진</p>
+            <p>Name :</p>
+            <textarea cols="50" rows="1"  name ="name"></textarea>
+            <p>Explain :</p>
+            <textarea cols="70" rows="9" name="explain"></textarea>
+            <p>Photo</p>
             {{form.photo}}
-            <input type="submit" value="추가하기" name = "submit">
+            <input type="submit" value="Add" name = "submit">
         </form>
     </div>
 {% endblock contents %}

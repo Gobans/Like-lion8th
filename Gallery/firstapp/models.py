@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime import datetime    
 # Create your models here.
 
 class picture(models.Model):
@@ -7,3 +7,4 @@ class picture(models.Model):
     name = models.TextField(default= '사진의 이름을 적어주세요')
     explain = models.TextField(default='사진에 대한 설명을 적어주세요')
     photo = models.ImageField(upload_to = "image", blank= True)
+    date = models.DateTimeField(default=datetime.now, blank=True)

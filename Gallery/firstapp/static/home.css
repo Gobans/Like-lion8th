@@ -3,7 +3,7 @@
 }
 
 .manin_title{
-    left: 240px; width: 450px; bottom: 120px; font-size: 3.8em; font-weight: bold; position: absolute; font-family: cursive;
+    left: 240px; width: 450px; bottom: 90px; font-size: 3.8em; position: absolute;
 }
 
 .add{
@@ -21,4 +21,18 @@
     padding: 100px;
     border: black double 10px;
     text-align: center;
+}
+
+.scroll{
+    position: fixed;
+    bottom: 10px;
+    left: 720px;
+}
+
+.scroll_func{
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent;
+    border: none;
+    color: #FFFFFF;
 }

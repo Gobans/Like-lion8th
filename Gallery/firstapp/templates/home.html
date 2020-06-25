@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="../static/home.css">
 {% endblock title %}
 
+
 {% block contents%}
+    <nav>
+        <div class= 'scroll'>
+            <button class="scroll_func" id="bottom" style=" outline: none; border: 0px; background-color: white;"><img src="../static/위로.png" width="20px"></button> 
+            <button class="scroll_func" id="top" style="outline: none; border: 0px; background-color: white;"><img src="../static/아래로.png" width="20px"></button>
+        </div>
+
+    </nav>
     <div class = 'outline'><img src="../static/top.png" width="100%" height="500px" >
         <div class="manin_title">
             <p>MH's Gallery</p>
@@ -21,7 +29,7 @@
             <p style="text-align: center;">{{i.name}}</p>
             {%if i.photo%}
             <div style="text-align: center;">
-                <img src="{{i.photo.url}}" style="width: 400px;" title="{{i.explain}}&#10어허">
+                <img src="{{i.photo.url}}" style="width: 400px;" title="{{i.date}}&#10{{i.explain}}">
             </div>
             {%endif%} 
             <div style="display: flex; flex-direction: column;"></div>
@@ -33,4 +41,5 @@
         </div>
     {% endfor %}
     </div>
+    <script src="../static/home_scroll.js"></script>
 {% endblock contents %}
