@@ -26,7 +26,7 @@
     {% for i in picture_key.all %}
 
         <div class = 'photo_zone'>
-            <p style="text-align: center;">{{i.name}}</p>
+            <p style="text-align: center; font-size: 30px;">{{i.name}}</p>
             {%if i.photo%}
             <div style="text-align: center;">
                 <img src="{{i.photo.url}}" style="width: 400px;" title="{{i.date}}&#10{{i.explain}}">
