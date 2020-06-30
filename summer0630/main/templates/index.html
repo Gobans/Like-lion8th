@@ -1,0 +1,19 @@
+<style>
+    body{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+<body>
+    {% for i in Sheets_rows %}
+    <div style="margin: 10px; border: black solid; height: 100%;">
+     운송장 번호 : {{i.sheetsId}} <br>
+     {{i.memberId.memberName}}
+     {{i.memberId.home}}
+     {{i.orderId.orderId}}
+     {{i.GoodsId.productName}}
+     {{i.GoodsId.productPrice}}
+    </div>
+{% endfor %}    
+</body>
