@@ -15,14 +15,12 @@ class Orders(models.Model):
 
 class Goods(models.Model):
     objects = models.Manager()
-    # memberId = models.ForeignKey(Members,on_delete=models.SET_NULL, null = True, blank = True)
-    # productName = models.CharField(max_length =127)
-    # productId = models.IntegerField()
-    # productPrice = models.IntegerField()
+    memberId = models.ForeignKey(Members,on_delete=models.SET_NULL, null = True, blank = True)
+    productName = models.CharField(max_length =127)
+    productPrice = models.IntegerField()
 
 class Sheets(models.Model):
     objects = models.Manager()
-    sheetsId = models.IntegerField(primary_key=True)
     memberId =models.ForeignKey(Members,on_delete=models.SET_NULL, null = True, blank =True )
     orderId = models.ForeignKey(Orders,on_delete=models.SET_NULL, null = True, blank =True )
-    # GoodsId = models.ForeignKey(Goods,on_delete=models.SET_NULL, null = True, blank =True )
+    GoodsId = models.ForeignKey(Goods,on_delete=models.SET_NULL, null = True, blank =True )

@@ -1,19 +1,18 @@
 <style>
     body{
-        text-align: center;
         display: flex;
         flex-direction: row;
+        text-align: center;
     }
 </style>
 <body>
     {% for i in Sheets_rows %}
     <div style="margin: 10px; border: black solid; height: 100%;">
-     운송장 번호 : {{i.sheetsId}} <br>
-     {{i.memberId.memberName}}
-     {{i.memberId.home}}
-     {{i.orderId.orderId}}
-     {{i.GoodsId.productName}}
-     {{i.GoodsId.productPrice}}
+     운송장 번호 : {{i.orderId.orderId}} <br>
+     주문자: {{i.memberId.memberName}} <br>
+     집: {{i.memberId.home}} <br>
+     제품명: {{i.GoodsId.productName}} <br>
+     제품가격: {{i.GoodsId.productPrice}} <br>
     </div>
 {% endfor %}    
 </body>
