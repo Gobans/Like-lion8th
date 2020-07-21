@@ -1,0 +1,13 @@
+<form action="{% url 'result' %}" method="GET">
+    <input type="text" name="query" value="{{query}}" placeholder="검색해보자">
+
+</form>
+
+{% for i in blog_list %}
+    <a href="{% url 'detail' i.id %}">
+        <h1>글 제목: {{i.title}}</h1>
+        <p>글쓴이: {{i.author}}</p>
+        <p>작성 시간: {{i.time}}</p>
+    </a>
+    <br>
+{% endfor %}
