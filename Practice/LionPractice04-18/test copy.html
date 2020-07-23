@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 페이지</title>
+</head>
+<body>
+    <h1>자바 스크립트 한스푼 </h1>
+    <script>
+        let object ={
+            이름 : "이명환",
+            성별 : "남",
+            전공 : "중국학과",
+            취미 : ["수영","중드보기","운동"],
+            음식추천 : [{아침 : "죽", 스페셜 : "삼겹살"},
+            {점심:"라면",스페셜:"치킨"}]
+        };
+        console.log(object);
+
+        object.성별 ="여";
+        console.log(object.성별);
+        
+        console.log(object.음식추천[0]);
+
+        console.log(object.음식추천[0].스페셜);
+
+        object.음식추천[1].점심 = "짜장면",object.음식추천[1].스페셜="피자";
+
+        console.log(object.음식추천[1])
+    </script>
+</body>
+</html>

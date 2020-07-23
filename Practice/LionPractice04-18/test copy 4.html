@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 페이지</title>
+</head>
+<body>
+    <h1 id ="top">자바 스크립트 한스푼 </h1>
+    <h2 id ="top">하이이</h2>
+    <h3 id ="top">가자</h3>
+
+    <h4 id="top">
+        돔이란 Document Object Model
+    </h4>
+    <script>
+        const Query = document.querySelector("#top");
+        console.log(Query);
+
+        Query.innerHTML="javascript";
+        console.log(Query);
+
+        const QueryAll = document.querySelectorAll("#top");
+        console.log(QueryAll);
+
+        QueryAll[3].innerHTML = "구글은 모든 것";
+        console.log(QueryAll[3]);
+    </script>
+</body>
+</html>

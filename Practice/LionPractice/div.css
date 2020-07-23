@@ -1,0 +1,12 @@
+.one{
+    border: solid 10px black;
+    text-align: center;
+    padding: 30px;
+    margin-top: 100px;
+}
+
+.two{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+}

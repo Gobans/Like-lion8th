@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트 예제 페이지</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            width: 100%;
+            position: relative;
+            height: 5400px;
+        }
+        .container_box{
+            width: 100%;
+            height: 1080px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            color: white;
+        }
+        .container_box:nth-child(odd){
+            background-color: #202020;
+        }
+        .container_box:nth-child(even){
+            background-color: #606060;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container_box">
+            <div>
+                <h1>첫 번째 페이지</h1>
+                <button type="button" id="top">위로</button>
+                <button type="button" id="bottom">아래로</button>
+            </div>
+        </div>
+        <div class="container_box">
+            <div>
+                <h1>두 번째 페이지</h1>
+                <button type="button" id="top">위로</button>
+                <button type="button" id="bottom">아래로</button>
+            </div>
+        </div>
+        <div class="container_box">
+            <div>
+                <h1>세 번째 페이지</h1>
+                <button type="button" id="top">위로</button>
+                <button type="button" id="bottom">아래로</button>
+            </div>
+        </div>
+        <div class="container_box">
+            <div>
+                <h1>네 번째 페이지</h1>
+                <button type="button" id="top">위로</button>
+                <button type="button" id="bottom">아래로</button>
+            </div>
+        </div>
+        <div class="container_box">
+            <div>
+                <h1>다섯 번째 페이지</h1>
+                <button type="button" id="top">위로</button>
+                <button type="button" id="bottom">아래로</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let all = document.querySelectorAll("button");
+        for(let i = 0; all.length; i+= 1){
+            if(i%2 == 0){
+                all[i].addEventListener('click',function(){
+                    window.scrollBy({left:0,top:-1080, behavior:'smooth'});
+                })
+            }else{
+                all[i].addEventListener('click',function(){
+                    window.scrollBy({left:0,top:+1080, behavior:'smooth'});
+                })
+            };
+        };
+    </script>
+</body>
+</html>

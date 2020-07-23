@@ -1,0 +1,19 @@
+table{
+    width: 70%;
+    text-align: center;
+}
+.tr1{
+    background-color: black;
+    color: white;
+}
+.tr3{
+    font-style: italic;
+}
+#tr2{
+    background-color: violet;
+    color: yellow;
+}
+
+#tr4{
+    font-style: italic;
+}
