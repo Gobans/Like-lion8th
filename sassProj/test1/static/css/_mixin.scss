@@ -1,0 +1,32 @@
+// @mixin unset {
+//     all:unset;
+// }
+
+// @mixin link($word){
+//     text-decoration: none;
+//     display: block;
+//     font-size: 50px;
+//     @if $word == "odd"{
+//         color: yellow;
+//     }
+//     @else {
+//         color: blue;
+//     }
+// }
+@mixin responsive($device){
+    @if $device == "iphone"{
+        @media only screen and (min-device-height: 360px) and (min-device-width: 760px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 4){}
+    }
+    @if $device == "iPad"{
+        @media only screen 
+        and (min-device-width: 768px) 
+        and (max-device-width: 1024px) 
+        and (-webkit-min-device-pixel-ratio: 1) {@content;}
+    }
+    @if $device == "iphone-l"{
+        @content;
+    }
+    @if $device == "ipad-l"{
+        @content;
+    }
+}

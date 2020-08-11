@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "index.css",
+	"sources": [
+		"index.scss",
+		"_mixin.scss"
+	],
+	"names": [],
+	"mappings": "AAGA,AAAA,IAAI,GAAG,CAAC,CAAA,EACJ,GAAG,EAAC,KAAK,GACZ;;AA0BD,AAAA,EAAE,CAAA,EACE,KAAK,EAAE,GAAG,EAQN,KAAK,EAAE,SAAS,EAGhB,KAAK,EAAE,MAAM,GAGpB;;AC1BO,MAAM,iHDWd,GAAA,AAAA,EAAE,CAAA,EAMM,KAAK,EAAE,MAAM,GASpB,EAAA"
+}
