@@ -7,4 +7,6 @@ urlpatterns=[
     path('', views.IndexView.as_view(), name='home'),
     path('<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('<int:post_id>/add_comment/create', views.comment_craete, name ='comment_craete'),
+    path('<int:comment_id>/<int:post_id>/delete_comment/delete', views.comment_delete, name ='comment_delete'),
+    path('<int:comment_id>/<int:post_id>/update_comment/update', views.comment_update, name ='comment_update'),
 ]

@@ -1,10 +1,10 @@
 from django.views import generic
-from .models import Post
+from .models import Post,Comment
 from .forms import CommentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
-
+from django.shortcuts import render
 
 class IndexView(generic.ListView):
     template_name = 'home.html'
@@ -22,6 +22,7 @@ class DetailView(generic.DetailView):
         context_data['comments'] = self.object.comment_set.all()
         return context_data
 
+
 def comment_craete(request,post_id):
     if not request.user.is_anonymous:
         comment_form = CommentForm(request.POST)
@@ -36,3 +37,24 @@ def comment_craete(request,post_id):
         messages.info(request,"로그인을 해주세요 ")
     return HttpResponseRedirect(reverse('detail',args=(post_id,)))
 
+def comment_delete(request,comment_id,post_id):
+    my_comment = Comment.objects.get(pk=comment_id)
+    if my_comment.author == request.user:
+        my_comment.delete() 
+    else:
+        messages.info(request,"댓글 작성자와 아이디가 일치하지 않습니다")
+    return HttpResponseRedirect(reverse('detail',args=(post_id,)))
+
+def comment_update(request,comment_id,post_id):
+    my_comment = Comment.objects.get(pk=comment_id)
+    if my_comment.author == request.user:
+        comment_form = CommentForm(instance=my_comment)
+        if request.method == "POST":
+            updated_form = CommentForm(request.POST, instance = my_comment)
+            if updated_form.is_valid():
+                updated_form.save()
+                return HttpResponseRedirect(reverse('detail',args=(post_id,)))
+        return render(request,'update.html',{'comment_form':comment_form} )
+    else:
+        messages.info(request,"댓글 작성자가 아닙니다")
+        return HttpResponseRedirect(reverse('detail',args=(post_id,)))

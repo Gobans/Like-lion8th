@@ -46,6 +46,8 @@
             {% for comment in comments %}
                 <p>{{comment.author}} {{comment.created}}</p>
                 <p>{{comment.content}}</p>
+                <a href="{% url 'comment_delete' comment.id ppost.id %}"> 삭제하기</a>
+                <a href="{% url 'comment_update' comment.id ppost.id %}"> 수정하기</a>  
             {% endfor %}
         </div>
 

@@ -14,6 +14,7 @@ class Post(models.Model):
         
 
 class Comment(models.Model):
+    objects = models.manager
     content = models.CharField(max_length=100)
     author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     post = models.ForeignKey(Post,on_delete=models.CASCADE)
