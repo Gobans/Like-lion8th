@@ -6,7 +6,7 @@ dateInput.setAttribute("max", lastDay);
 
 let contentsBox = document.querySelector('.contents');
 let BackImg = document.querySelector("#img"); 
-const key = "?key=c9b76986468427bb85c2e8928316a530";
+const key = "?key=68d721bfd4c8a4cfffc956d0386282ea";
 let movieCodeObject = {};
 let movieNameArray = [];
 let movieCodeArray = []; 
