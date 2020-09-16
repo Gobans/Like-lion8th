@@ -12,6 +12,5 @@ def detail(request,id):
     apiKey = "?api_key=b4104d048776cbde94b18eac3035f9e3"
     URL = base +"movie/"+movieid+apiKey
     data = fetch(URL)
-
-
-    return(render(request,'detail.html',{'data':data}))
+    image = "https://image.tmdb.org/t/p/w500" + data["poster_path"]
+    return(render(request,'detail.html',{'data':data,'image':image}))

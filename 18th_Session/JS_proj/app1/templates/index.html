@@ -32,6 +32,8 @@
             speed: 500, 
 
             touchEnabled : (navigator.maxTouchPoints > 0),
+
+            autoHover : true,
             
           });
         });
@@ -51,9 +53,12 @@
         </div> -->
         <div class="contents">
             <ul class="slider">
-                <a href="{% url 'detail' 157336 %}"><img src="{% static 'IMG/Inception.jpg'%}" alt=""></a>
-                <a href="#"><img src="{% static 'IMG/Interstellar.jpg'%}" alt=""></a>
-                <a href="#"><img src="{% static 'IMG/Tenet.jpg'%}" alt=""></a>
+                <a href="{% url 'detail' 577922 %}"><img src="{% static 'IMG/Tenet.jpg'%}" alt=""></a>>
+                <a href="{% url 'detail' 27205 %}"><img src="{% static 'IMG/Inception.jpg'%}" alt=""></a>
+                <a href="{% url 'detail' 157336 %}"><img src="{% static 'IMG/Interstellar.jpg'%}" alt=""></a>
+                <a href="{% url 'detail' 49026 %}"><img src="{% static 'IMG/darknight.jpg'%}" alt=""></a>
+                <a href="{% url 'detail' 77 %}"><img src="{% static 'IMG/Memento.jpg'%}" alt=""></a>
+
             </ul>
         </div>
     </div>

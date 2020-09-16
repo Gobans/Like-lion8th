@@ -1,11 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>영화 상세페이지</title>
+    <link href="{% static 'CSS/detail.css' %}" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.com/libraries/moment.js/"></script>
 </head>
 <body>
-    {{data.backdrop_path}}
+
+    <div class="title"></div>
+    <div class="box">
+        <a href="{% url 'index' %}">Nolan is genius</a>
+        <div class="container">
+            <div class="custom"></div>
+            <img src={{image}} alt="">
+            <div class="info">
+                <p style="font-size: 28px;">{{data.title}} ({{data.release_date}})</p>
+                <br>
+                <br>
+                <p style="font-size: 20px;">{{data.overview}}</p>
+                <br>
+                Genres:
+                {% for genre in data.genres%}
+                 {{genre.name}} /   
+                {% endfor %}
+                <br>
+                <br>
+                Runtime: {{data.runtime}} &nbsp;&nbsp;Budget : {{data.budget}} $
+
+            </div>
+
+        </div>
+        <div class="description">
+
+        </div>
+
+    </div>
+    
 </body>
 </html>
